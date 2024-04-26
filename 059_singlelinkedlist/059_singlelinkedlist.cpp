@@ -71,14 +71,14 @@ bool searchNode(int nim, Node* current, Node* previous) {
         return false;
     }
 }
-
 bool deleteNode(int nim) {
     Node* current = START;
     Node* previous = START;
-    if (searchNode(nim, previous, current) == false)
+    if (searchNode(nim, previous, current) ==
+        false)
         return false;
     previous->next = current->next;
-    if (current = START)
+    if (current == START)
         START = current->next;
     return true;
 }
@@ -92,7 +92,7 @@ bool listEmpty() {
 
 void traverse() {
     if (listEmpty()) {
-        cout << "list kosong" << endl;
+        cout << "List Kosong" << endl;
         system("pause");
         system("cls");
         return;
@@ -100,7 +100,7 @@ void traverse() {
     else {
         Node* currentNode = START;
         while (currentNode != NULL) {
-            cout << "NIM" << currentNode->noMhs << ", Nama : " << currentNode->name << endl;
+            cout << "NIM: " << currentNode->noMhs << ", Nama: " << currentNode->name << endl;
             currentNode = currentNode->next;
         }
     }
@@ -144,6 +144,10 @@ int main() {
             cout << "Pilihan: ";
             cin >> pilihan;
             switch (pilihan)
-
-
-}
+            {
+            case 1:
+                addNode();
+                cout << "Data Berhasil Ditambahkan" << endl;
+                system("pause");
+                system("cls");
+                break;
